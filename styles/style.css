@@ -1,3 +1,12 @@
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
 .page {
   min-width: 1100px;
   max-width: 1600px;
@@ -16,13 +25,12 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  z-index: -2;
+  z-index: -3;
 }
 /*стили для элемента logo*/
 .logo {
   height: 32px;
   width: 228px;
-  z-index: 1;
 }
 /*стили для модификатора logo*/
 .logo_place_header {
@@ -38,7 +46,6 @@
   line-height: 96px;
   font-size: 102px;
   font-weight: 700;
-  z-index: 1;
 }
 /*стили для текста в блоке header*/
 .header__subtitle {
@@ -51,7 +58,6 @@
   line-height: 25px;
   font-size: 18px;
   font-weight: normal;
-  z-index: 1;
 }
 /*стили для ссылки в блоке header*/
 .header__link {
@@ -60,7 +66,11 @@
   font-weight: normal;
   color: #2f80ed;
   text-decoration: none;
-  z-index: 1;
+  transition: opacity .5s linear;
+}
+
+.header__link:hover {
+  opacity: .2;
 }
 /*картинка для блока header*/
 .header__main-illustration {
@@ -71,7 +81,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  z-index: 0;
+  z-index: -1;
 }
 /*фон для картинки блока header*/
  .header__square-pic {
@@ -81,13 +91,81 @@
   position: absolute;
   top: 64px;
   right:0;
-  z-index: -1;
+  z-index: -2;
+  animation: rotation 20s linear infinite;
 }
-/*начало второго блока; стили для блока description*/
-.desription {
-  background-color: #f2f2f2;
+
+.techniques {
+  width: 80%;
+  padding-top: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cards {
+  width: 920px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.cards__item {
+  width: 240px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards__item:nth-of-type(3) {
   margin: 0;
+}
+
+
+.cards__image {
+  margin: 60px 40px 0 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cards__title {
+  margin: 43px 0 0 0;
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cards__description {
+  margin: 16px 0 0 0;
+  line-height: 23px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+.video__iframes {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 1050px;
+  justify-content: space-around;
+}
+
+.oakley {
+  margin: 160px auto 0;
+}
+
+/*начало второго блока; стили для блока description*/
+.description {
   padding: 0;
+  margin: 100px 0 0 0;
 }
 /*флекс-бокс второго блока*/
 .two-columns {
@@ -95,7 +173,7 @@
   flex-direction: row;
   justify-content: space-between;
   width: 80%;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .two-columns__brief {
@@ -238,6 +316,11 @@
   font-weight: normal;
   text-decoration: none;
   z-index: 0;
+  transition: opacity 1s linear;
+}
+
+.feynman__link:hover {
+  opacity: .5;
 }
 /*стили для картинки с Фейманом*/
 .feynman__picture {
@@ -246,6 +329,77 @@
   background-repeat: no-repeat;
   background-position: bottom left;
   z-index: -1;
+}
+
+.khan {
+  margin-top: 105px;
+}
+
+.khan__container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.khan__autor {
+  line-height: 42px;
+  font-size: 30px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.khan__title {
+  line-height: 1.15;
+  font-size: 60px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.khan__quote {
+  width: 790px;
+  margin-top: 50px;
+  margin-bottom: 36px;
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.khan__quote-autor {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.khan__quote-autor-subline {
+  line-height: 1.15;
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.khan__book-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 68px;
+  justify-content: flex-start;
+}
+
+.khan__book-pic {
+  width: 620px;
+  height: 608px;
+  background-image: url(../images/khan-book.jpg);
+  background-size: cover;
+  margin-right: 48px;
+}
+
+.khan__buy-link {
+  text-decoration: none;
+  color: #2f80ed;
+  transition: opacity 1s linear;
+}
+
+.khan__buy-link:hover {
+  opacity: .5;
 }
 /*начало пятого блока; стили блока kaufman*/
 .kaufman {
@@ -280,6 +434,37 @@
   top: 0;
   right: -210px;
   z-index: -1;
+  animation: rotation 20s linear infinite;
+}
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto 217px;
+}
+
+.resources__logo-zone {
+  width: 1100px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resources__link {
+  width: 270px;
+  height: 38px;
+  text-align: center;
+  transition: opacity 1s linear;
+}
+
+.resources__logo {
+  height: 38px;
+}
+
+.resources__link:hover {
+  opacity: .5;
 }
 /*начало шестого блока; стили блока footer*/
 .footer {
@@ -356,7 +541,14 @@
   font-size: 18px;
   font-weight: normal;
   text-decoration: none;
+  transition: opacity 1s linear;
 }
+
+.footer__column-link:hover {
+  opacity: .5;
+}
+
+
 /*стили для иконоко соцсетей*/
 .footer__social-icon {
   height: 16px;
