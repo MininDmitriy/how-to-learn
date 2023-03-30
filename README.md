@@ -12,4 +12,4 @@
 Планирую добавшть несколько видео с той же тематикой (методы обучения) из Youtube в виде  
 **<iframe>**.
 
-Ссылка на [сайт](https://minindmitriy.github.io/how-to-learn/), размещенный на GitHub Pages.
+Ссылка на [сайт](https://minindmitriy.github.io/how-to-learn), размещенный на GitHub Pages.
